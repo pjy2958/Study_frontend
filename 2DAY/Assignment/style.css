@@ -1,0 +1,39 @@
+/* body 표현 방식 지정
+   가로 1000px
+   가로 중앙에 정렬
+   배경색 지정 */
+body {
+    width: 1000px;
+    margin: 0 auto;
+    background: rgb(181, 194, 199);
+}
+
+/* body안의 header 표현 방식 지정
+   해당 부분의 테두리를 사각형 모양으로 검은색 선2px로 지정
+   내용에 들어가는 문자 가운대 정렬
+   상단부와 간격 10px
+   배경색 지정 */
+body > header {
+    border: 2px solid black;
+    text-align: center;
+    margin-top: 10px;
+    background: rgb(151, 165, 202);
+}
+
+/* label 태그 표현 방식 지정
+   글자크기 15px
+   아래 element와 20px 간격 지정 */
+label {
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+/* input 태그 표현 방식 지정
+   글자크기 15px
+   아래 element와 20px 간격 지정
+   입력 창 안의 배경색 지정 */
+input {
+    font-size: 15px;
+    margin-bottom: 20px;
+    background-color: whitesmoke;
+}
