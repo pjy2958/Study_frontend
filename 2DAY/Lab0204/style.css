@@ -1,0 +1,37 @@
+* {
+    color: green;
+}
+li {
+    color: black;
+}
+
+li:hover {
+    color: blue;
+}
+
+#BTS {
+    color: bisque;
+}
+
+.red {
+    width: 100px;
+    height: 100px;
+    background: yellow;
+}
+
+button:hover {
+    color: red;
+    background: cyan;
+}
+
+a[href="https://www.daum.net"] {
+    color: rgb(221, 255, 3);
+}
+
+a[href^="https://www.goo"] {
+    color: orange;
+}
+
+a[href$="googledaum.net"] {
+    color: darkmagenta;
+}

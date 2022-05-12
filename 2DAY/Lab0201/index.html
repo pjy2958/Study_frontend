@@ -16,9 +16,70 @@
     4. html의 동작
         liteserver를 동작 시키지 않아도
         그냥 html 파일을 더블클릭하면 동작이 된다.
+    5. dom구조의 기본
+       document
+        <html>
+         <head></head>
+         <body></body>
+        </html>
+    6. 웹동작방식
+        frontend : html/css/javascript UI
+        backend : UI X, 데이터 + 로직
+        index.jsp -> httpd -> servlet -> java bean -> DB
+                  <-       <-         <-           <-
     -->
+
+    <!-- 
+        10. CSS
+        html의 화면을 이쁘게 만들어주는 역할
+        css3는 2d or 3d도 만들 수 있다.
+        css3는 animation도 가능하다.
+        정해진 태그나 클래스에 스타일을 입힐 때 사용한다.
+     -->
+    <style>
+        div {
+            color : #536dfe;
+        }
+        span {
+            color: rgb(194, 199, 199);
+            background-color: rgb(0, 0, 0);
+        }
+    </style>
 </head>
 <body>
-    <p>안녕~~</p>
+    <!-- p tag 단락을 만들 때 사용하는 태그 -->
+    <!-- alt + shift 방향키 : 복사 -->
+    <!-- alt + 방향키 : 한줄 이동 -->
+    <!-- shift + command + k : 한줄 삭제 -->
+    <p>p태그 적용</p>
+    <p>
+        p태그 + br태그 <br>
+    </p>
+    <!-- br은 리턴해서 한문장 아래로 -->
+    br태그 미적용
+    br태그 미적용<br>
+    br태그 적용<br>
+    <h1>h1 태그</h1>
+    <h2>h2 태그</h2>
+    <h3>h3 태그</h3>
+    <h4>h4 태그</h4>
+    <!-- 
+        7. element(엘리먼트)
+        start tag + content + end tag
+    -->
+    <h5>h5 태그</h5>
+    <!-- 
+        8. div 태그
+        html이나 javascript에서 가장 많이 사용하는 태그
+        span 태그도 사용되지만 span은 span 태그안에 span을 사용하면 적용이 안된다.
+        형태를 가로 X 세로의 형태로 사용된다.
+    -->
+    <div>가장 많이 쓰는 태그</div>
+    <!-- 
+        9. span 태그
+     -->
+    <span>
+        필요할 때 그 부분만 사용하는 태그
+    </span>
 </body>
 </html>
