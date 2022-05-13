@@ -1,0 +1,139 @@
+.navbar {
+  /* 플렉스 박스로 만들어준다. */
+  display: flex;
+
+  /* 옆으로 정렬해주기 
+    space-between은 컨텐츠 사이에 중간중간 스페이스를 넣어주는 역할을 한다.
+    현재 있는 축(수평)에서 할려면 justify-content
+     */
+  justify-content: space-between;
+
+  /* 수직으로 정렬
+    현재 주어진 축과 반대방향으로 적용을 시킨다.(수직방향)
+    수직의 중앙으로 맞춰준다
+    */
+  align-items: center;
+
+  /* 색상을 입혀보자. */
+  background-color: #263343;
+
+  /* 전체적으로 모서리가 붙어 있어서 pading을 준다. 순서는 위아래 양 옆에*/
+  padding: 5px 50px;
+}
+
+/* 원하지 않는 공백을 지워버린다. 위에처럼만 하면 약간의 공백이 생겨버림. */
+body {
+  margin: 0;
+}
+
+/* a 테그에 텍스트 밑줄과 색상이 있는데 text-decoration으로 없애 주자 */
+a {
+  text-decoration: None;
+  color: white;
+}
+/* 로고 사이즈 키우기 */
+.navbar_logo {
+  font-size: 24px;
+  color: white;
+}
+
+/* navbar_menu를 flex박스로 변경 */
+.navbar_menu {
+  display: flex;
+  /* list 목록으로 되어있어서 점점점으로 되어있는데 이녀석을 없애보자 */
+  list-style: none;
+  /* 메뉴를 중앙으로 보내기 -> padding 사용 */
+  padding: 0;
+}
+
+/* 메뉴 아이템들이 붙어 있어서 스페이스를 넣어서 정렬 해준다. */
+.navbar_menu li {
+  padding: 8px 12px;
+}
+
+/* 메뉴에 마우스를 올렸을 경우 배경색 변경 */
+.navbar_menu li:hover {
+  background-color: black;
+  border-radius: 10px;
+}
+
+/* link icon의 스타일을 지정한다. */
+.navbar_icons {
+  list-style: none;
+  color: white;
+  /* 옆으로 정렬 */
+  display: flex;
+  padding-left: 0;
+}
+
+/* navbar_icons의 간격을 넣어주기 */
+.navbar_icons li {
+  /* 위아래 양옆 padding */
+  padding: 8px 12px;
+  font-size: 24px;
+}
+
+/*  원래 문서의 흐름에서 빠져나와서 지정된 위치에 정돈이 되게 하도록 적용 */
+.navbar_togleBtn {
+  /* 원래 문서의 흐름을 벗어나는 방법 - 절대경로로 변경 */
+  position: absolute;
+  /* 오른쪽의 적당한 위치에 위치하도록 해준다. */
+  right: 40px;
+  font-size: 24px;
+  color: antiquewhite;
+
+  /* 햄버거 빵이 기본적으로 안보이도록 설정 */
+  display: none;
+}
+
+/* 반응형 웹 사이트로 만들기 위해 크기가 일정정도 작아졌을때
+   다르고 젝용할 스타일을 입힌다.
+   - 미디어 쿼리를 사용한다. */
+@media screen and (max-width: 770px) {
+  /* 제일 바깥쪽에 있는 .navbar
+    row에서 column으로 바꾼다.
+    */
+  .navbar {
+    flex-direction: column;
+    /* 공간을 여유주기 위해서 padding */
+    padding: 8px 24px;
+  }
+
+  /* 메뉴 목록도 아래로 정렬되게 바꾼다. */
+  .navbar_menu {
+    flex-direction: column;
+    /* 반대축 아이템즈를 사용하여 center를 맞춰준다. */
+    align-items: center;
+    /* width 적용 */
+    width: 100%;
+    display: none;
+  }
+
+  /* 너비 만큼 하이라이트가 생기도록 설정 */
+  .navbar_menu li {
+    width: 100%;
+    /* 자동으로 텍스트가 왼쪽으로 정렬
+        text-align을 center로 적용 */
+    text-align: center;
+  }
+
+  /* navbar_icons가 방향을 바꾸지 않은 상태에서 중간으로 가도록 설정 */
+  .navbar_icons {
+    /* 현재 축에서 중간으로 이동 */
+    justify-content: center;
+    /* 폭을 전체로 설정 */
+    width: 100%;
+
+    display: none;
+  }
+
+  /* 사이즈가 작아지면 햄버거 빵 출력 */
+  .navbar_togleBtn {
+    display: block;
+  }
+
+  .navbar_menu.active,
+  .navbar_icons.active {
+    display: flex;
+  }
+}
