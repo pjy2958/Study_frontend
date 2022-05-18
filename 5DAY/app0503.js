@@ -70,6 +70,7 @@
 // console.log(coffee);
 
 // 해당 객체에 프로퍼티가 있는 확인하는 연산자
+// javascript에서는 ""나 ''이 같다.
 // in
 // console.log("price" in coffee);
 // console.log("type" in coffee);
