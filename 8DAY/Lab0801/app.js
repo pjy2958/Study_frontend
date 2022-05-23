@@ -94,27 +94,73 @@
 // };
 
 // const promiseA = promiseForHomework(true);
-// const promiseB = promiseForHomework();
+// // const promiseB = promiseForHomework();
 // console.log("PromiseA 출력완료!!");
 
 // promiseA.then(v => console.log(v));
 // promiseB.then(v => console.log(v)).catch(e => console.error(e));
 
-// const getHen = () => new Promise((resolve, reject) => {
-//     setTimeout(() => resolve("암탉"), 1000);
-// });
-// const getEgg = (hen) => new Promise((resolve, reject) => {
-//     setTimeout(() => reject(new Error(`${hen} => 달걀`)), 1000);
-// });
-// const cook = (egg) => new Promise((resolve, reject) => {
-//     setTimeout(() => resolve(`${egg} => 계란후라이`), 1000);
+const getHen = () => new Promise((resolve, reject) => {
+    setTimeout(() => resolve("암탉"), 1000);
+});
+const getEgg = (hen) => new Promise((resolve, reject) => {
+    setTimeout(() => reject(new Error(`${hen} => 달걀`)), 1000);
+});
+const cook = (egg) => new Promise((resolve, reject) => {
+    setTimeout(() => resolve(`${egg} => 계란후라이`), 1000);
+});
+
+getHen().then(hen => getEgg(hen)).then(egg => cook(egg)).then(meal => console.log(meal));
+getHen()
+    .then(getEgg)
+    .catch(error => {
+        return "빵";
+    })
+    .then(cook)
+    .then(console.log);
+
+
+
+// function goToSchool() {
+//     console.log("학교에 갑니다.");
+// }
+
+// function arriveAtSchool_asis() {
+//     setTimeout(function () {
+//         console.log("학교에 도착했습니다.");
+//     }, 1000);
+// }
+
+// function study() {
+//     console.log("열심히 공부를 합니다.");
+// }
+
+// function arriveAtSchool_tobe() {
+//     return new Promise(function (resolve) {
+//         setTimeout(function () {
+//             console.log("학교에 도착했습니다.");
+//             resolve();
+//         }, 1000);
+//     });
+// }
+
+// goToSchool();
+// arriveAtSchool_tobe().then(function () {
+//     study();
 // });
 
-// getHen().then(hen => getEgg(hen)).then(egg => cook(egg)).then(meal => console.log(meal));
-// getHen()
-//     .then(getEgg)
-//     .catch(error => {
-//         return "빵";
-//     })
-//     .then(cook)
-//     .then(console.log);
+function promise(bool) {
+    return new Promise((resolve, reject) => {
+        console.log("등교중");
+        setTimeout(() => {
+            if (bool) {
+                resolve(console.log("등교성공"));
+            } else {
+                reject(console.log("등교실패"));
+            }
+        }, 3000)
+    });
+};
+
+promise(true);
+

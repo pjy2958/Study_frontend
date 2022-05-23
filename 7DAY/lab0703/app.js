@@ -62,14 +62,14 @@
 // 그래서 print data 출력~!! 이 나온 것이다. 
 // arrow function은 context를 유지해 주기 때문이다.
 const myObj = {
-    runTimeout(){
+    runTimeout() {
         // arrow function 적용해 보자.
-        setTimeout(()=>{
-            console.log(this===window);
+        setTimeout(() => {
+            console.log(this === window);
             this.printData();
-        },1000);
+        }, 1000);
     },
-    printData(){
+    printData() {
         console.log("print data 출력~!! arrow function");
     }
 }
